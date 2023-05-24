@@ -1,0 +1,119 @@
+<div class="row">
+  <div class="col-md-8">
+  
+    <div>
+      <h4>
+        <i class="fa-solid fa-arrow-left"></i> Confimar dados do pagamento
+      </h4>
+    </div>
+    <form #formulario>
+      <div class="card mt-3">
+        <div class="card-body">
+          <div class="form-floating mb-3">
+              <input
+              class="form-control bg-white"
+              id="impValor"
+              placeholder="R$0,00"
+              [value]="dados?.valor"
+              disabled
+              />
+              <label for="impValor">Valor a pagar </label>
+          </div>
+        </div>
+      </div>
+      <div >
+        <h5 class="label-informacao">Pagamento</h5>
+      </div>
+      <div class="card mt-3 mb-1">
+        <div class="card-body">
+          <div class=" form-floating mb-3">
+              <input
+              class="form-control bg-white"
+              id="impValor"
+              placeholder="R$0,00"
+              [value]="dados?.vencimento | date:'dd/MM/yyyy'"
+              disabled
+              />
+              <label  for="impValor">Data Vencimento</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h5 class="label-informacao">Quem vai receber</h5>
+      </div>
+      <div class="card mb-1">
+        <div class="card-body">
+          
+          <div class="row">
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control bg-white"
+                  id="impNome"
+                  placeholder="nome"
+                  [value]="dados?.nome"
+                  disabled
+                />
+                <label for="impNome">Nome</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control bg-white"
+                  id="impCPF"
+                  placeholder="000.000.000-00"
+                  [value]="dados?.cnpj"
+                  disabled
+                />
+                <label for="impCPF">CNPJ</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control bg-white"
+                  id="impCPF"
+                  placeholder=""
+                  [value]="dados?.instituicao"
+                  disabled
+                />
+                <label for="impCPF">Instituição</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div >
+        <h5 class="label-informacao">Informação Adicional</h5>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control bg-white"
+                  id="impAgencia"
+                  placeholder="0000"
+                  [value]="dados?.codigo"
+                  disabled
+                />
+                <label for="impAgencia">Código de barras</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="text-center">
+          <button class="btn btn-dark w-100">Confirmar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

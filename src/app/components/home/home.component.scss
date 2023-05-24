@@ -1,0 +1,30 @@
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+  background-color: #eff4f4;
+  
+}
+
+.header {
+  grid-area: header;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 280px ;
+  grid-template-areas:
+    "....... header  header"
+    "sidebar content content";
+}
+.box {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.header {
+  // background-color: #999;
+}

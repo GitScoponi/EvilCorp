@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-10">
+    <div>
+      <h4><i class="fa-solid fa-arrow-left " style="cursor: pointer;" [routerLink]="['/user']"  ></i> Transferir</h4>
+    </div>
+    <div class="card mt-3">
+      <form #formulario>
+        <div class="card-body">
+          <div class="form-floating mb-3">
+            <input
+              type="Number"
+              class="form-control"
+              id="impValor"
+              placeholder="R$0,00"
+            />
+            <label for="impValor">Valor </label>
+          </div>
+        </div>
+        <div class="card-body">
+          <h4>Dados do cliente - Destino</h4>
+          <div class="row">
+            <div class="col-8">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="impNome"
+                  placeholder="nome"
+                />
+                <label for="impNome">Nome</label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="impCPF"
+                  placeholder="000.000.000-00"
+                />
+                <label for="impCPF">CPF</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="impAgencia"
+                  placeholder="0000"
+                />
+                <label for="impAgencia">Agencia</label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="impConta"
+                  placeholder="00000000-0"
+                />
+                <label for="impConta">Conta</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="text-center">
+              <button class="btn btn-dark w-100">Confirmar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

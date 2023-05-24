@@ -1,0 +1,97 @@
+<div
+  class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary"
+  style="width: 280px"
+>
+  <table style="color: black">
+    <tr>
+      <td><i class="fa-solid fa-circle-h" style="font-size: 50px"></i></td>
+      <td class="label-sidebar">
+        <tr>
+          <td>João da Silva</td>
+        </tr>
+        <tr>
+          <td style="font-size: 12px">Conta x</td>
+        </tr>
+      </td>
+    </tr>
+  </table>
+  <table style="color: black">
+    <tr>
+      <td>
+        <tr>
+          <td>SALDO ATUAL</td>
+          <td
+            style="cursor: pointer"
+            class="label-sidebar"
+            *ngIf="mostrar"
+            (click)="mostrar = !mostrar"
+          >
+            <i class="fa-solid fa-eye-slash"></i>
+          </td>
+          <td
+            style="cursor: pointer"
+            class="label-sidebar"
+            *ngIf="!mostrar"
+            (click)="mostrar = !mostrar"
+          >
+            <i class="fa-solid fa-eye" ></i>
+          </td>
+        </tr>
+        <tr>
+          <td
+            *ngIf="mostrar"
+            class="label-sidebar"
+            (click)="mostrar = !mostrar"
+          >
+            R$<strong>3.947,00</strong>
+          </td>
+          <td *ngIf="!mostrar" (click)="mostrar = !mostrar">
+            R$<strong>********</strong>
+          </td>
+        </tr>
+      </td>
+    </tr>
+  </table>
+  <hr />
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a
+        class="nav-link text-black"
+        aria-current="page"
+        [routerLink]="['/user']"
+      >
+        <i class="fa-solid fa-house px-2"></i>Início
+      </a>
+    </li>
+    <li>
+      <a
+        class="nav-link link-body-emphasis text-black"
+        [routerLink]="['/user/transferir']"
+        routerLinkActive="bg-black text-white"
+        ><i class="fa-solid fa-money-bill-transfer px-2"></i> Transferir
+      </a>
+    </li>
+    <li>
+      <a
+        class="nav-link link-body-emphasis text-black"
+        [routerLink]="['/user/pagar']"
+        routerLinkActive="bg-black text-white"
+        ><i class="fa-solid fa-receipt px-2"></i> Pagar
+      </a>
+    </li>
+  </ul>
+  <!-- <hr> -->
+  <!-- <div class="dropdown">
+      <a  class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>mdo</strong>
+      </a>
+      <ul class="dropdown-menu text-small shadow">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div> -->
+</div>
