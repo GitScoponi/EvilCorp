@@ -3,7 +3,7 @@
 
 import { HttpHeaders } from "@angular/common/http";
 
-export const URLBASE = "https://localhost:7079/";
+export const URLBASE = "https://scoponi.azurewebsites.net/";
 
 export function getHeaders() {
     var headers = new HttpHeaders().set("Content-Type", "application/json");
