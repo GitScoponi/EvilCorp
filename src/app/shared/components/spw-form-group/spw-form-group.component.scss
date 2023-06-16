@@ -1,0 +1,26 @@
+.spw-label, .spw-label-inline, .spw-button-link {
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 2px;
+}
+.titulo-caixa {
+     font-size: 14px; 
+}
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+
+.titulo-input {
+    position: absolute !important;
+    left: 11px !important;
+    top: 2px !important;
+    background: linear-gradient(transparent, white 66%) !important;
+    z-index: 2 !important;
+}
+.titulo-input-readonly {
+    background: linear-gradient(transparent, whitesmoke 66%) !important;
+}

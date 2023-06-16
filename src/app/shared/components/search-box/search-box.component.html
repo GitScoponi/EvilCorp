@@ -1,0 +1,7 @@
+<div class="search-box" [ngClass]="{searchboxactive: searchAct}">
+    <div class="search-box-icon" (click)="searchAct = !searchAct"></div>
+    <div class="search-box-input">
+        <input [(ngModel)]="value"  placeholder="Pesquisar" (ngModelChange)="enviarValue()" >
+    </div>
+    <span class="search-box-clear" (click)="clear()"></span>
+</div>

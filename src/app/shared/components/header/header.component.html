@@ -1,0 +1,39 @@
+<div class="cheader no-print">
+    <div class="navbar">
+        <!-- <div ><img class="logo" src="./assets/spw.png"></div> -->
+        <input type="checkbox" id="hamburguer" style="display: none;" (change)=" this.toggleClass = !this.toggleClass">
+        <label for="hamburguer" *ngIf="temMenu">
+            <div class="hamburguer " [class.active]="toggleClass">
+                <div class="hamburguer-linha-central"></div>
+            </div>
+        </label>
+        <div id="logo"><img class="logo" [src]="caminhoLogo" /></div>
+        <div class="font-titulo-master android-navigation mdl-navigation__link ">
+            <span>TCU Portal de Transparência</span>
+            <!-- <span class="blink"><br>Versão de Teste</span> -->
+        </div>
+        <ul class="nav__list menu" [class.active]="toggleClass" *ngIf="mostraMenu " >
+           
+         
+            <!-- <li class="nav__listitem" (click)="irPara('home')">Tabelas</li> -->
+            <li class="nav__listitemsair"><span (click)="sair()" style="cursor: pointer;">Sair</span></li>
+        </ul>
+     
+
+        <!-- <li><a (click)="irPara('documentacao')">Documentação</a></li> -->
+        <!-- </ul> -->
+
+    </div>
+</div>
+<div class="Conteudo no-print">
+    <div class="barra-principal-sistema">
+        <ul class=" breadcrumb ">
+            <li *ngFor="let item of rotas; let i = index" class="my-2">
+                <span class='mdl-color-text--blue-500' style="cursor: pointer;" (click)="irPara(item.Rota,item.Params)"
+                    *ngIf="item?.Link === 'SIM'">{{item?.Titulo}}</span>
+                <span style="cursor: context-menu; color: #51729e;" *ngIf="item?.Link === 'NAO'">{{item?.Titulo}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="barra-linha mdl-color--blue-500"></div>

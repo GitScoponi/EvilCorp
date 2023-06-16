@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms'
+import { Router } from '@angular/router';
+import { TransacaoDTO } from 'src/app/model/TransacaoDTO';
+import { ClienteService } from 'src/app/services/cliente.service';
+import { SideBarComponent } from '../side-bar/side-bar.component';
+import { SideBarService } from '../side-bar/side-bar.service';
 
 @Component({
   selector: 'app-transferir',
@@ -7,4 +13,22 @@ import { Component } from '@angular/core';
 })
 export class TransferirComponent {
 
+  constructor(
+    private _cliente: ClienteService,
+    private _sideBar: SideBarService,
+    private _router: Router
+  ) { }
+  transferir(f: NgForm) {
+    if (f.valid) {
+      var request = Object.assign(new TransacaoDTO(), f.value)
+      this._cliente.transferir(request).subscribe(x => {
+        this._sideBar.atualizarExtrato();
+         this._router.navigate(['/user'])
+      });
+
+    } else {
+      alert("Preencha todos os campos!");
+    }
+
+  }
 }

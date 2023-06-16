@@ -1,0 +1,99 @@
+
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+.search-box {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 40px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 1px #2873ef;
+    overflow: hidden;
+    .search-box-input {
+        position: relative;
+        width: 300px;
+        height: 40px;
+        left: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            font-family: 'Roboto', sans-serif;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100% !important;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            padding: 10px 0;
+        }
+    }
+    .search-box-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        cursor: pointer;
+    }
+
+    .search-box-icon::before {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border: 3px solid #2873ef;
+        border-radius: 50%;
+        transform: translate(-4px, -4px);
+    }
+
+    .search-box-icon::after {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 12px;
+        background: #2873ef;
+        transform: translate(6px, 6px) rotate(315deg);
+    }
+}
+
+.search-box.searchboxactive {
+    width: 360px;
+}
+
+.search-box-clear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    right: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-box-clear::before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(45deg);
+}
+.search-box-clear::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(315deg);
+}

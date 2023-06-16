@@ -1,26 +1,39 @@
 <div class="container">
-    <div class="card mt-3 centralizar" style="max-width: 500px;">
-        <div class="card-header">
-            <h4>Login</h4>
-        </div>
-        <div class="card-body" >
-            <div class="icone-login">
-                <i class=" fa-solid fa-circle-user"></i>
-            </div>
-            <div class="form-group">
-                <label for="impCPF">CPF</label>
-                <input type="text" class="form-control" [dropSpecialCharacters]="false" mask="000.000.000-00">
-            </div>
-            <div class="form-group">
-                <label for="impCPF">Senha</label>
-                <input type="password" class="form-control">
-            </div>
-            <div class="pull-rigth">
-                <a class="link-esqueceu" >Esqueceu a senha?</a>
-            </div>
-        </div>
-        <div class="card-footer text-center">
-            <button class="btn btn-primary "style="width:120px" [routerLink]="['/home']" >Entrar</button>
-        </div>
+  <div class="card mt-3 centralizar" style="max-width: 500px">
+    <div class="card-header">
+      <h4>Login</h4>
     </div>
+    <form #myForm="ngForm" ngForm (ngSubmit)="logar(myForm)">
+      <div class="card-body">
+        <div class="icone-login">
+          <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="form-group mb-3">
+          <label for="impCPF">CPF<span class="text-danger"> (*)</span></label>
+          <input
+            name="cpf"
+            required
+            [(ngModel)]="formData.cpf"
+            type="text"
+            class="form-control"
+            [dropSpecialCharacters]="false"
+            mask="000.000.000-00"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="impCPF">Senha<span class="text-danger"> (*)</span></label>
+          <input
+            type="password"
+            name="senha"
+            required
+            [(ngModel)]="formData.senha"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="card-footer text-center">
+        <button class="btn btn-primary" style="width: 120px">Entrar</button>
+      </div>
+    </form>
+  </div>
 </div>

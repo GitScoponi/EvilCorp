@@ -4,13 +4,16 @@
       <h4><i class="fa-solid fa-arrow-left " style="cursor: pointer;" [routerLink]="['/user']"  ></i> Transferir</h4>
     </div>
     <div class="card mt-3">
-      <form #formulario>
+      <form #formulario="ngForm" ngForm (ngSubmit)="transferir(formulario)">
         <div class="card-body">
           <div class="form-floating mb-3">
             <input
               type="Number"
               class="form-control"
               id="impValor"
+              name="Valor"
+              ngModel
+              required
               placeholder="R$0,00"
             />
             <label for="impValor">Valor </label>
@@ -25,6 +28,9 @@
                   type="text"
                   class="form-control"
                   id="impNome"
+                  name="Nome"
+                  ngModel
+                  required
                   placeholder="nome"
                 />
                 <label for="impNome">Nome</label>
@@ -36,6 +42,10 @@
                   type="text"
                   class="form-control"
                   id="impCPF"
+                  name="CPF"
+                  ngModel
+                  required
+                  [dropSpecialCharacters]="false" mask="000.000.000-00"
                   placeholder="000.000.000-00"
                 />
                 <label for="impCPF">CPF</label>
@@ -49,7 +59,12 @@
                   type="text"
                   class="form-control"
                   id="impAgencia"
+                  name="Agencia"
                   placeholder="0000"
+                  [dropSpecialCharacters]="false" mask="0000"
+                  
+                  ngModel
+                  required
                 />
                 <label for="impAgencia">Agencia</label>
               </div>
@@ -60,7 +75,11 @@
                   type="text"
                   class="form-control"
                   id="impConta"
+                  name="Conta"
                   placeholder="00000000-0"
+                  
+                  ngModel
+                  required
                 />
                 <label for="impConta">Conta</label>
               </div>

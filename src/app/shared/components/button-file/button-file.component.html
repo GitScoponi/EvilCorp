@@ -1,0 +1,5 @@
+<label #labelUpl class="btn" [class.bg-readonly]="readonly" (click)="inputUpl.click()">
+    <i class="fa fa-upload"></i>
+    <span #spanUpl>{{perguntaArquivo}}</span>
+</label>
+<input #inputUpl type="file" [disabled]="readonly"   (change)="changeBtn($event)" [accept]="accept" />

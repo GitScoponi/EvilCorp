@@ -1,0 +1,14 @@
+.right-button {
+    position: absolute;
+    right: 8px;
+    top: 17px;
+    border-radius: 50%;
+    border: 0;
+    color: black;
+    width: 30px;
+    height: 30px;
+    outline: 0;
+    :hover {
+        color: #2196f3;
+    }
+}

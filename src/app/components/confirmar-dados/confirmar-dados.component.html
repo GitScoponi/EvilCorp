@@ -6,7 +6,7 @@
         <i class="fa-solid fa-arrow-left"></i> Confimar dados do pagamento
       </h4>
     </div>
-    <form #formulario>
+    <form #formulario="ngForm" ngForm (ngSubmit)="pagar()">
       <div class="card mt-3">
         <div class="card-body">
           <div class="form-floating mb-3">
@@ -14,7 +14,7 @@
               class="form-control bg-white"
               id="impValor"
               placeholder="R$0,00"
-              [value]="dados?.valor"
+              [value]="dados?.valor | currency : 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' "
               disabled
               />
               <label for="impValor">Valor a pagar </label>

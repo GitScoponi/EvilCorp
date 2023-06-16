@@ -1,82 +1,58 @@
-<div
-  class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary"
-  style="width: 280px"
->
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px">
   <table style="color: black">
     <tr>
       <td><i class="fa-solid fa-circle-h" style="font-size: 50px"></i></td>
       <td class="label-sidebar">
-        <tr>
-          <td>João da Silva</td>
-        </tr>
-        <tr>
-          <td style="font-size: 12px">Conta x</td>
-        </tr>
-      </td>
+    <tr>
+      <td>{{ cliente?.dadosUsuario?.nome }}</td>
+    </tr>
+    <tr>
+      <td style="font-size: 12px">{{ cliente?.conta[0]?.numero }}</td>
+    </tr>
+    </td>
     </tr>
   </table>
   <table style="color: black">
     <tr>
       <td>
-        <tr>
-          <td>SALDO ATUAL</td>
-          <td
-            style="cursor: pointer"
-            class="label-sidebar"
-            *ngIf="mostrar"
-            (click)="mostrar = !mostrar"
-          >
-            <i class="fa-solid fa-eye-slash"></i>
-          </td>
-          <td
-            style="cursor: pointer"
-            class="label-sidebar"
-            *ngIf="!mostrar"
-            (click)="mostrar = !mostrar"
-          >
-            <i class="fa-solid fa-eye" ></i>
-          </td>
-        </tr>
-        <tr>
-          <td
-            *ngIf="mostrar"
-            class="label-sidebar"
-            (click)="mostrar = !mostrar"
-          >
-            R$<strong>3.947,00</strong>
-          </td>
-          <td *ngIf="!mostrar" (click)="mostrar = !mostrar">
-            R$<strong>********</strong>
-          </td>
-        </tr>
+    <tr>
+      <td>SALDO ATUAL</td>
+      <td style="cursor: pointer" class="label-sidebar" *ngIf="mostrar" (click)="mostrar = !mostrar">
+        <i class="fa-solid fa-eye-slash"></i>
       </td>
+      <td style="cursor: pointer" class="label-sidebar" *ngIf="!mostrar" (click)="mostrar = !mostrar">
+        <i class="fa-solid fa-eye"></i>
+      </td>
+    </tr>
+    <tr>
+      <td *ngIf="mostrar" class="label-sidebar" (click)="mostrar = !mostrar">
+        <strong>{{
+          cliente?.conta[0]?.saldo
+          | currency : "BRL" : "symbol" : "1.2-2" : "pt-BR"
+          }}</strong>
+      </td>
+      <td *ngIf="!mostrar" (click)="mostrar = !mostrar">
+        <strong>********</strong>
+      </td>
+    </tr>
+    </td>
     </tr>
   </table>
   <hr />
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
-      <a
-        class="nav-link text-black"
-        aria-current="page"
-        [routerLink]="['/user']"
-      >
+      <a class="nav-link text-black" aria-current="page" [routerLink]="['/user']">
         <i class="fa-solid fa-house px-2"></i>Início
       </a>
     </li>
     <li>
-      <a
-        class="nav-link link-body-emphasis text-black"
-        [routerLink]="['/user/transferir']"
-        routerLinkActive="bg-black text-white"
-        ><i class="fa-solid fa-money-bill-transfer px-2"></i> Transferir
+      <a class="nav-link link-body-emphasis text-black" [routerLink]="['/user/transferir']"
+        routerLinkActive="bg-black text-white"><i class="fa-solid fa-money-bill-transfer px-2"></i> Transferir
       </a>
     </li>
     <li>
-      <a
-        class="nav-link link-body-emphasis text-black"
-        [routerLink]="['/user/pagar']"
-        routerLinkActive="bg-black text-white"
-        ><i class="fa-solid fa-receipt px-2"></i> Pagar
+      <a class="nav-link link-body-emphasis text-black" [routerLink]="['/user/pagar']"
+        routerLinkActive="bg-black text-white"><i class="fa-solid fa-receipt px-2"></i> Pagar
       </a>
     </li>
   </ul>

@@ -1,0 +1,8 @@
+<div class="form-group my-2">
+    <label class="spw-label " [class.titulo-input-readonly]="readonly">{{titulo}}<span class="text-danger"
+            *ngIf="isRequiredField()">(*)</span></label>
+    <ng-content></ng-content>
+    <span class="text-danger" *ngIf="error">
+        <p [innerHTML]="error" style="margin-bottom: -20px; font-size: 9pt;"> </p>
+    </span>
+</div>

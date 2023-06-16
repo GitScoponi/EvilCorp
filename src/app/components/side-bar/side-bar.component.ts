@@ -1,10 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ClienteService } from 'src/app/services/cliente.service';
+import { SideBarService } from './side-bar.service';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss']
 })
-export class SideBarComponent {
+export class SideBarComponent implements OnInit {
+  cliente: any = {};
+  constructor(private _cliente: ClienteService,
+    private _sideBar: SideBarService) { }
+  ngOnInit(): void {
+    this.listarExtrato();
+    this._sideBar.SideBar.subscribe(x => {
+      this.listarExtrato();
+    })
+
+  }
+  listarExtrato() {
+    this._cliente.listarCompleto().subscribe(x => {
+      this.cliente = x;
+      this._sideBar.NomeCPF.next({
+        Nome: x?.dadosUsuario?.nome ,
+        CPF: x?.dadosUsuario?.cpf 
+      })
+    })
+  }
   mostrar: boolean = false;
 }

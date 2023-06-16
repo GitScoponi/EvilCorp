@@ -1,33 +1,22 @@
 <div class="row">
   <div class="col-md-10">
     <div>
-      <h4><i class="fa-solid fa-arrow-left" style="cursor: pointer;" [routerLink]="['/user']" ></i> Pagar</h4>
+      <h4><i class="fa-solid fa-arrow-left" style="cursor: pointer;" [routerLink]="['/user']"></i> Pagar</h4>
     </div>
     <div class="card mt-3">
-      <form #formulario>
+      <form #formulario="ngForm" ngForm (ngSubmit)="confirmardados(formulario)">
         <div class="card-body">
           <div class="row">
             <div class="col-12">
               <div class="mb-3">
-                <label class="form-label" for="impCPF"
-                  >Digite o código de barra</label
-                >
-                <textarea
-                  type="text"
-                  rows="3"
-                  class="form-control"
-                  id="impCPF"
-                  placeholder=""
-                ></textarea>
+                <label class="form-label" for="impCPF">Digite o código de barra</label>
+                <textarea type="text" rows="3" name="codigo" ngModel required class="form-control" id="impCPF" placeholder=""></textarea>
               </div>
             </div>
           </div>
           <div class="col-12">
             <div class="text-center">
-              <button
-                class="btn btn-dark w-100"
-                [routerLink]="['/user/confirmardados']"
-              >
+              <button class="btn btn-dark w-100">
                 Confirmar
               </button>
             </div>
