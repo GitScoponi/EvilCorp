@@ -10,6 +10,7 @@
 
 .header {
   grid-area: header;
+  
 }
 
 .wrapper {
@@ -17,7 +18,7 @@
   grid-gap: 10px;
   grid-template-columns: 280px ;
   grid-template-areas:
-    "....... header  header"
+    "header header  header"
     "sidebar content content";
 }
 .box {
@@ -27,4 +28,12 @@
 
 .header {
   // background-color: #999;
+}
+
+.logo{
+  height: 150px;
+  width: 180px;
+  display: block;
+  padding: 0;
+  margin: -35px 0;
 }

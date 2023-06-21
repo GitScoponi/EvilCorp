@@ -14,3 +14,32 @@
 .centralizar{
     margin:  0 auto;
 }
+
+.header {
+    grid-area: header;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-gap: 10px;
+    // grid-template-columns: 280px ;
+    grid-template-areas:
+      "header   "
+      "content  ";
+  }
+  .box {
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .header {
+    // background-color: #999;
+  }
+  
+  .logo{
+    height: 150px;
+    width: 180px;
+    display: block;
+    padding: 0;
+    margin: -35px 0;
+  }

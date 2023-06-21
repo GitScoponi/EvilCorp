@@ -1,7 +1,7 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px">
   <table style="color: black">
     <tr>
-      <td><i class="fa-solid fa-circle-h" style="font-size: 50px"></i></td>
+      <td><i [class]="letra" style="font-size: 50px"></i></td>
       <td class="label-sidebar">
     <tr>
       <td>{{ cliente?.dadosUsuario?.nome }}</td>
@@ -53,6 +53,10 @@
     <li>
       <a class="nav-link link-body-emphasis text-black" [routerLink]="['/user/pagar']"
         routerLinkActive="bg-black text-white"><i class="fa-solid fa-receipt px-2"></i> Pagar
+      </a>
+    </li>
+    <li>
+      <a class="nav-link link-body-emphasis text-black" style="cursor: pointer;"(click)=sair()><i class="fa-solid fa-right-from-bracket px-2"></i> Sair
       </a>
     </li>
   </ul>

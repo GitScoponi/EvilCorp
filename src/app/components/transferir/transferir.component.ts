@@ -5,6 +5,7 @@ import { TransacaoDTO } from 'src/app/model/TransacaoDTO';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { SideBarComponent } from '../side-bar/side-bar.component';
 import { SideBarService } from '../side-bar/side-bar.service';
+import { SPWAlert } from 'src/app/shared/class/Alert';
 
 @Component({
   selector: 'app-transferir',
@@ -23,11 +24,13 @@ export class TransferirComponent {
       var request = Object.assign(new TransacaoDTO(), f.value)
       this._cliente.transferir(request).subscribe(x => {
         this._sideBar.atualizarExtrato();
-         this._router.navigate(['/user'])
+        this._router.navigate(['/user'])
+        SPWAlert.AlertaSucesso("Transferência realizada com sucesso!");
+
       });
 
     } else {
-      alert("Preencha todos os campos!");
+      SPWAlert.AlertaAviso("Preencha todos os campos!");
     }
 
   }

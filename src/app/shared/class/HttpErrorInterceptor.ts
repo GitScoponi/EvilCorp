@@ -45,10 +45,10 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     this._app.desativarPanel()
     let errorMessage;
     let mensagem = '';
-    if (error.error instanceof ErrorEvent) {
+    console.log(error)
+    if (error?.error?.hasOwnProperty('resposta')) {
       // client-side error
-      errorMessage = `Error: ${error.error.message}`;
-      mensagem = error.error.message;
+      mensagem = '#SPW#'+error.error.resposta;
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
       mensagem = error.message;
